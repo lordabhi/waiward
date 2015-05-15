@@ -94,7 +94,13 @@
 			<br/><br/><br/>
 
 			<a href="/waiward/hseqCaseFile/index">View Existing Case Files</a>
+			<br/><br/><br/><br/>
+
+			<h1> Configurations </h1>
+            <br/>
+			<a href="/waiward/DiscrepancyType/index">Discrepancy Type</a>
 			<br/><br/><br/>
+
 		</div>
 	</body>
 </html>

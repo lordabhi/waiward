@@ -34,7 +34,21 @@ class NCRController {
         }
 
         def hseqCaseFileInstance = new HseqCaseFile(params)
-        hseqCaseFileInstance.caseNo = 1
+
+        def lastCaseFileRec = HseqCaseFile.executeQuery("from HseqCaseFile order by caseNo desc ", [offset:0, max:1])
+
+
+        if(lastCaseFileRec == null || lastCaseFileRec.size() == 0){
+            hseqCaseFileInstance.caseNo = 1
+        }else{
+            hseqCaseFileInstance.caseNo = Integer.parseInt(lastCaseFileRec.get(0).caseNo) + 1
+        }
+
+        println(lastCaseFileRec);
+
+
+      // hseqCaseFileInstance.caseNo = 1
+
         hseqCaseFileInstance.save()
 
         NCRInstance.hseqCaseFile = hseqCaseFileInstance
