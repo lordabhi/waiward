@@ -23,37 +23,37 @@
 			<table>
 			<thead>
 					<tr>
-					
+
+						<g:sortableColumn property="recordType" title="${message(code: 'NCR.hseqCaseFile.caseNo.label', default: 'Case Number')}" />
+
 						<g:sortableColumn property="recordType" title="${message(code: 'NCR.recordType.label', default: 'Record Type')}" />
+
+						<g:sortableColumn property="state" title="${message(code: 'NCR.state.label', default: 'State')}" />
 					
-						<g:sortableColumn property="enteredBy" title="${message(code: 'NCR.enteredBy.label', default: 'Entered By')}" />
+						<g:sortableColumn property="source" title="${message(code: 'NCR.source.label', default: 'Source')}" />
 					
-						<g:sortableColumn property="reportedBy" title="${message(code: 'NCR.reportedBy.label', default: 'Reported By')}" />
-					
-						<g:sortableColumn property="qualityCoordinator" title="${message(code: 'NCR.qualityCoordinator.label', default: 'Quality Coordinator')}" />
+						<g:sortableColumn property="discrepancyType" title="${message(code: 'NCR.discrepancyType.label', default: 'Discrepancy Type')}" />
 					
 						<g:sortableColumn property="status" title="${message(code: 'NCR.status.label', default: 'Status')}" />
-					
-						<g:sortableColumn property="title" title="${message(code: 'NCR.title.label', default: 'Title')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${NCRInstanceList}" status="i" var="NCRInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
+
+						<td>${fieldValue(bean: NCRInstance, field: "hseqCaseFile.caseNo")}</td>
+
 						<td><g:link action="show" id="${NCRInstance.id}">${fieldValue(bean: NCRInstance, field: "recordType")}</g:link></td>
+
+						<td>${fieldValue(bean: NCRInstance, field: "state")}</td>
 					
-						<td>${fieldValue(bean: NCRInstance, field: "enteredBy")}</td>
+						<td>${fieldValue(bean: NCRInstance, field: "source")}</td>
 					
-						<td>${fieldValue(bean: NCRInstance, field: "reportedBy")}</td>
-					
-						<td>${fieldValue(bean: NCRInstance, field: "qualityCoordinator")}</td>
+						<td>${fieldValue(bean: NCRInstance, field: "discrepancyType")}</td>
 					
 						<td>${fieldValue(bean: NCRInstance, field: "status")}</td>
-					
-						<td>${fieldValue(bean: NCRInstance, field: "title")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>

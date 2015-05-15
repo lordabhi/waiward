@@ -22,7 +22,16 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list NCR">
-			
+
+				<g:if test="${NCRInstance?.hseqCaseFile}">
+					<li class="fieldcontain">
+						<span id="hseqCaseFile-label" class="property-label"><g:message code="NCR.hseqCaseFile.label" default="Case Number" /></span>
+
+						<span class="property-value" aria-labelledby="hseqCaseFile-label"><g:link controller="hseqCaseFile" action="show" id="${NCRInstance?.hseqCaseFile?.id}">${NCRInstance?.hseqCaseFile?.encodeAsHTML()}</g:link></span>
+
+					</li>
+				</g:if>
+
 				<g:if test="${NCRInstance?.recordType}">
 				<li class="fieldcontain">
 					<span id="recordType-label" class="property-label"><g:message code="NCR.recordType.label" default="Record Type" /></span>
@@ -85,15 +94,7 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${NCRInstance?.hseqCaseFile}">
-				<li class="fieldcontain">
-					<span id="hseqCaseFile-label" class="property-label"><g:message code="NCR.hseqCaseFile.label" default="Hseq Case File" /></span>
-					
-						<span class="property-value" aria-labelledby="hseqCaseFile-label"><g:link controller="hseqCaseFile" action="show" id="${NCRInstance?.hseqCaseFile?.id}">${NCRInstance?.hseqCaseFile?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
+
 			
 				<g:if test="${NCRInstance?.source}">
 				<li class="fieldcontain">

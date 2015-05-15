@@ -36,7 +36,7 @@
 			<g:form url="[resource:discrepancyTypeInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${discrepancyTypeInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					
+
 				</fieldset>
 			</g:form>
 		</div>
