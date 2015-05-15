@@ -20,5 +20,12 @@ class NCR extends HseqRecord{
 
         source()
         discrepancyType()
+
+        hseqCaseFile cascade: 'all'
     }
+
+    String toString() {
+        "$recordType $title $state"
+    }
+
 }

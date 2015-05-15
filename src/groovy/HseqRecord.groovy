@@ -26,5 +26,6 @@ abstract class HseqRecord {
         description()
 
         hseqCaseFile(nullable: true)
+
     }
 }

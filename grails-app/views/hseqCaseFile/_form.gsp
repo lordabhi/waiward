@@ -7,7 +7,9 @@
 		<g:message code="hseqCaseFile.caseNo.label" default="Case No" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="caseNo" required="" value="${hseqCaseFileInstance?.caseNo}"/>
+	<g:field name="caseNo" type="number" value="${hseqCaseFileInstance.caseNo}" required=""/>
 
 </div>
+
+
 

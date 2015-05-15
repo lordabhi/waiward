@@ -41,11 +41,8 @@ class NCRController {
         if(lastCaseFileRec == null || lastCaseFileRec.size() == 0){
             hseqCaseFileInstance.caseNo = 1
         }else{
-            hseqCaseFileInstance.caseNo = Integer.parseInt(lastCaseFileRec.get(0).caseNo) + 1
+            hseqCaseFileInstance.caseNo = lastCaseFileRec.get(0).caseNo + 1
         }
-
-        println(lastCaseFileRec);
-
 
       // hseqCaseFileInstance.caseNo = 1
 
@@ -54,6 +51,9 @@ class NCRController {
         NCRInstance.hseqCaseFile = hseqCaseFileInstance
 
         NCRInstance.save flush:true
+
+        hseqCaseFileInstance.hseqRecord = NCRInstance
+        hseqCaseFileInstance.save()
 
         request.withFormat {
             form multipartForm {
@@ -99,7 +99,9 @@ class NCRController {
             return
         }
 
-        NCRInstance.delete flush:true
+        NCRInstance.hseqCaseFile.delete flush: true
+
+        //NCRInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {

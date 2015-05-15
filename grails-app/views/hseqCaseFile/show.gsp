@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${hseqCaseFileInstance?.hseqRecord}">
+				<li class="fieldcontain">
+					<span id="hseqRecord-label" class="property-label"><g:message code="hseqCaseFile.hseqRecord.label" default="Hseq Record" /></span>
+					
+						<span class="property-value" aria-labelledby="hseqRecord-label"><g:link controller="NCR" action="show" id="${hseqCaseFileInstance?.hseqRecord?.id}">${hseqCaseFileInstance?.hseqRecord?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:hseqCaseFileInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

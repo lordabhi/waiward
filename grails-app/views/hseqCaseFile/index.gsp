@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="caseNo" title="${message(code: 'hseqCaseFile.caseNo.label', default: 'Case No')}" />
 					
+						<th><g:message code="hseqCaseFile.hseqRecord.label" default="Hseq Record" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +35,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${hseqCaseFileInstance.id}">${fieldValue(bean: hseqCaseFileInstance, field: "caseNo")}</g:link></td>
+					
+						<td>${fieldValue(bean: hseqCaseFileInstance, field: "hseqRecord")}</td>
 					
 					</tr>
 				</g:each>
